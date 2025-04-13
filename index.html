@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字游戏</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1.2s ease both;
+        }
+
+        .title-bar {
+            width: 100%;
+            padding: 20px 0;
+            background-color: #333;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .title-bar h1 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 2.5em;
+        }
+
+        .rgb-strip {
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            position: fixed;
+            top: 80px;
+            left: 0;
+            animation: animateRGB 5s linear infinite;
+        }
+
+        @keyframes animateRGB {
+            0% { background-position: 0% 0; }
+            100% { background-position: 100% 0; }
+        }
+
+        .download-button {
+            margin-top: 100px;
+            padding: 20px 40px;
+            background-color: #282c34;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 2em;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .download-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .game-introduction {
+            text-align: center;
+            font-size: 1.5em;
+            animation: fadeInDown 1.2s ease both;
+        }
+
+        .game-introduction p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-bar">
+        <h1>猜数字游戏</h1>
+    </div>
+    <div class="rgb-strip"></div>
+    <div class="game-introduction">
+        <h2>游戏介绍</h2>
+        <p>您可以在游戏内选择模式，如1-100。</p>
+        <p>程序会设定一个数字，您需要猜到它。</p>
+        <p>并且除了这个，还有很多功能！</p>
+        <p>欢迎您的游玩！</p>
+    </div>
+    <a href="https://github.com/ANDYzytnb/GuessTheNumber/releases" class="download-button">Download</a>
+</body>
+</html>
